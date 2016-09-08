@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script>
+
+function alumnos(nombre, edad, genero) {
+	this.nombre 	= nombre;
+	this.edad 		= edad;
+	this.genero 	= genero;
+}
+
+var matias 		= new alumnos("matias",25,1);
+var javiera 	= new alumnos("javiera",23,2);
+var beatriz 	= new alumnos("beatriz",25,2);
+var jose 		= new alumnos("jose",24,1);
+var manuel 		= new alumnos("manuel",19,1);
+var veronica 	= new alumnos("veronica",24,2);
+
+var companeros 	= [matias,javiera,beatriz,jose,manuel,veronica];
+console.log(companeros.length);
+
+var mujer 			= [];
+var hombre 			= [];
+var edadmujeres 	= 0; 
+var edadhombres 	= 0; 
+
+for (var i = 0; i < companeros.length; i++) {
+
+	if (companeros[i].genero == 2){
+		mujer.push(companeros[i]);
+		edadmujeres = edadhombres + companeros[i].edad; 
+	} 
+	if (companeros[i].genero == 1){
+		hombre.push(companeros[i]);
+		edadhombres = edadmujeres + companeros[i].edad;
+	}
+
+}
+
+		var total_edades = edadmujeres + edadhombres;
+
+		// Devolver un arreglo con solo las mujeres del curso
+		console.log("las mujeres son:");
+		console.log(mujer);
+
+		// Devolver un arreglo con solo las hombres del curso
+		console.log("los hombres son:");
+		console.log(hombre);
+
+		//Devolver la suma de las edades de las mujeres
+		console.log('Edad de las mujeres '+ edadmujeres);
+		
+		//Devolver la suma de las edades de las mujeres
+		console.log('Edad de las hombres '+ edadhombres);
+
+		
+		//Devolver la suma de todas las edades
+		console.log(edadmujeres + edadhombres);
+</script>
+	
+</body>
+</html>
